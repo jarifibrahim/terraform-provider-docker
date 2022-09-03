@@ -46,6 +46,8 @@ var (
 var creationTime time.Time
 
 func resourceDockerContainerCreate(ctx context.Context, d *schema.ResourceData, meta interface{}) diag.Diagnostics {
+	// I've intentionally returned error over here so that terraform apply fails with this error message.
+    	return diag.Errorf("=========================== IBRAHIM =========================")
 	var err error
 	client := meta.(*ProviderConfig).DockerClient
 	authConfigs := meta.(*ProviderConfig).AuthConfigs
